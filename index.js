@@ -9,8 +9,9 @@ playingBoard.addEventListener("click", function (event) {
         sell.innerHTML = symbols[turn];
         turn += 1;
     }
-    if(turn && turn >= 4 && anyWinner()){
-        playingBoard.innerHTML = `GAME OVER - "${anyWinner()}" has Won!`;
+    const anyWinnerRes = anyWinner();
+    if(turn && turn >= 4 && anyWinnerRes){
+        playingBoard.innerHTML = `GAME OVER - "${anyWinnerRes}" has Won!`;
         turn = undefined;
     }
 
